@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <script src="./js/vue.js"></script>
     <style type="text/css">
         h1{
             text-align: center;
@@ -10,7 +11,21 @@
         }
     </style>
 </head>
+
 <body>
-    <h1>Hello 不过vvv如此为啥没用111c'c'c'c   ok</h1>   
+    <div id="app">
+        <h1>
+            {{ message }}
+        </h1>
+    </div>
+   
 </body>
+    <script>
+           new Vue({
+            el:"#app",
+            data:{
+                message:"Hello Vue"
+            }
+           })    
+    </script>
 </html>
