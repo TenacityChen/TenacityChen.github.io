@@ -1,0 +1,737 @@
+<!doctype html>
+<html style='font-size:20px !important'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-fences-math .MathJax_SVG_Display, .md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: visible; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; zoom: 90%; }
+#math-inline-preview-content { zoom: 1.1; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-math .MathJax_SVG_Display { margin-top: 8px; cursor: default; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+
+/* open-sans-italic - latin-ext_latin */
+
+/* open-sans-700 - latin-ext_latin */
+
+/* open-sans-700italic - latin-ext_latin */
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+    #write {
+        max-width: 1024px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    #write {
+        max-width: 1200px;
+    }
+}
+
+#write>ul:first-child,
+#write>ol:first-child {
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+
+h4 {
+    font-size: 1.25em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: 1em;
+    color: #777;
+}
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table {
+    margin: 0.8em 0;
+}
+
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+
+ul,
+ol {
+    padding-left: 30px;
+}
+
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+
+blockquote blockquote {
+    padding-right: 0;
+}
+
+table {
+    padding: 0;
+    word-break: initial;
+}
+
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0, 28, 36, .3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+    background-color: #f8f8f8;
+}
+
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before {
+    left: -1.5625rem;
+    top: .375rem;
+}
+
+#write>h4.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write>h5.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write>h6.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+
+/** focus mode */
+
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header,
+.context-menu,
+.megamenu-content,
+footer {
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state {
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg, hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0));
+}
+
+mark {
+    font-weight: bold;
+    color:rgb(214, 52, 52);
+    background:white;
+}
+
+ :root {--mermaid-font-zoom:1.25em ;} 
+</style><title>java面试题理解</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n506"><a class="md-toc-inner" href="#java-基础"><em>Java</em> 基础</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n5"><a class="md-toc-inner" href="#1面向对象的四大特性">1.面向对象的四大特性</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n13"><a class="md-toc-inner" href="#2和的区别">2.&amp;和&amp;&amp;的区别？</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n14"><a class="md-toc-inner" href="#-分别代表-按位或）-or-逻辑与）">&amp; 分别代表 （按位或） or <mark>（逻辑与）</mark></a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n15"><a class="md-toc-inner" href="#-则代表--短路与）">&amp;&amp; 则代表  <mark>（短路与）</mark></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n21"><a class="md-toc-inner" href="#3-final有什么用">3. <em>final</em>有什么用？</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n22"><a class="md-toc-inner" href="#31-被--final--修饰的类不可以被继承">3.1 被  <em>final</em>  修饰的类不可以被继承</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n23"><a class="md-toc-inner" href="#32-被-final--修饰的方法不可以被重写">3.2 被 final  修饰的方法不可以被重写</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n24"><a class="md-toc-inner" href="#33-被-final--修饰的变量">3.3 被 final  修饰的变量  </a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n28"><a class="md-toc-inner" href="#4-string-str--1-和--string-str--new-string1---一样吗-">4. <em>String str = "1" 和  String str = new String("1")</em>   <mark>一样吗 ?</mark></a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n29"><a class="md-toc-inner" href="#string-str--1---1存放在常量池中"><em>String str = "1"</em> ：  “1”存放在常量池中。</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n30"><a class="md-toc-inner" href="#string-str--new-string1--new-string1-存放在堆中"><em>String str = new String("1")</em> ： <em>new String("1")</em> 存放在堆中。</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n32"><a class="md-toc-inner" href="#5-java-中操作字符串都有哪些类它们之间有什么区别">5. <em>Java</em> 中操作字符串都有哪些类？它们之间有什么区别？</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n33"><a class="md-toc-inner" href="#string每次对字符串的修改都会生成一个新的对象并将原有的指针指向新对象">String：每次对字符串的修改，都会生成一个新的对象，并将原有的指针指向新对象</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n34"><a class="md-toc-inner" href="#stringbuffer-在原对象上进行操作-线程安全-多线程）">StringBuffer: 在原对象上进行操作 <mark>线程安全</mark> （<mark>多线程</mark>）</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n35"><a class="md-toc-inner" href="#stringbuilder-在原对象上进行操作-线程不安全--效率高--单线程）">StringBuilder: 在原对象上进行操作 <mark>线程不安全</mark>  <mark>效率高</mark>  （<mark>单线程</mark>）</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n37"><a class="md-toc-inner" href="#6-构造器constructor）是否可被重写override）">6. 构造器（<mark><em>constructor</em></mark>）是否可被重写（<mark><em>override</em></mark>）？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n40"><a class="md-toc-inner" href="#7是否可以继承string类">7.是否可以继承<em>String</em>类？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n43"><a class="md-toc-inner" href="#8-string类的常用方法有哪些">8. <em>String</em>类的常用方法有哪些？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n56"><a class="md-toc-inner" href="#9-char型变量中能否能不能存储一个中文汉字为什么">9. <em>char</em>型变量中能否能不能存储一个中文汉字，为什么？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n59"><a class="md-toc-inner" href="#10-this关键字的用法">10. <em>this</em>关键字的用法</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n60"><a class="md-toc-inner" href="#1-普通的引用--this-指向当前对象-本身">1. 普通的引用  <em>this</em> 指向当前对象 本身</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n61"><a class="md-toc-inner" href="#2-形参与成员名重复可以用-this-区分">2. 形参与成员名重复，可以用 <em>this</em> 区分</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n62"><a class="md-toc-inner" href="#3-引用本类的构造函数">3. 引用本类的构造函数</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n64"><a class="md-toc-inner" href="#11-super-关键字的用法">11. <em>super</em> 关键字的用法</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n65"><a class="md-toc-inner" href="#super-是指向当前对象父类的引用"><em>super</em> 是指向当前对象父类的引用  </a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n66"><a class="md-toc-inner" href="#子类变量与父类变量一致时可用--super--区分">子类变量与父类变量一致时可用  <em>super</em>  区分</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n67"><a class="md-toc-inner" href="#调用父类的构造函数">调用父类的构造函数</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n69"><a class="md-toc-inner" href="#12-this与super的区别">12. <mark><em>this</em>,与<em>super</em>,的区别</mark></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n74"><a class="md-toc-inner" href="#13-static-存在的主要意义">13. <mark><em>static</em>, 存在的主要意义</mark></a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n75"><a class="md-toc-inner" href="#修饰变量和方法"><mark>修饰变量和方法：</mark></a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n77"><a class="md-toc-inner" href="#静态代码块"><mark>静态代码块</mark>：</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n79"><a class="md-toc-inner" href="#优点-1"><mark>优点：</mark></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n82"><a class="md-toc-inner" href="#14--break-continue-return-的区别及作用">14.  <mark><em>break ,continue ,return</em> 的区别及作用</mark></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n87"><a class="md-toc-inner" href="#15-构造方法有哪些特性">15. 构造方法有哪些特性？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n92"><a class="md-toc-inner" href="#16-静态变量和实例变量区别">16. <mark>静态变量和实例变量区别</mark></a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n93"><a class="md-toc-inner" href="#静态变量"><mark>静态变量</mark>：</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n95"><a class="md-toc-inner" href="#实例变量"><mark>实例变量</mark>：</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n97"><a class="md-toc-inner" href="#17-静态方法和实例方法有何不同">17. <mark>静态方法和实例方法有何不同？</mark></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n102"><a class="md-toc-inner" href="#18-什么是方法的返回值返回值的作用是什么">18. 什么是方法的返回值？返回值的作用是什么?</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n106"><a class="md-toc-inner" href="#19-什么是内部类">19. 什么是内部类？ </a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n108"><a class="md-toc-inner" href="#21-java中异常分为哪些种类">21. <em>Java</em>,中异常分为哪些种类？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n119"><a class="md-toc-inner" href="#22-final-finally-finalize-的区别">22. <mark>final finally finalize 的区别</mark></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n124"><a class="md-toc-inner" href="#23-hashcode-介绍">23. <mark><em>hashCode</em>() 介绍</mark></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n127"><a class="md-toc-inner" href="#24-抽象类和接口java7）的区别">24. 抽象类和接口（<em>Java7</em>）的区别</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n128"><a class="md-toc-inner" href="#25-java-8的接口新增了哪些特性">25. <em>Java 8</em>的接口新增了哪些特性？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n129"><a class="md-toc-inner" href="#26-重写和重载的区别">26. 重写和重载的区别</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n130"><a class="md-toc-inner" href="#27-为什么要有hashcode这个函数">27. 为什么要有HashCode这个函数？</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n133"><a class="md-toc-inner" href="#java-io"><em>java Io</em></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n134"><a class="md-toc-inner" href="#1--java中有几种类型的流">1.  <em>Java</em>中有几种类型的流？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n138"><a class="md-toc-inner" href="#2-什么是-java-序列化">2. 什么是 <em>java</em> 序列化</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n139"><a class="md-toc-inner" href="#3-如何实现-java-序列化">3. 如何实现 <em>java</em> 序列化？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n140"><a class="md-toc-inner" href="#4-字节流和字符流的区别">4. 字节流和字符流的区别？ </a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n141"><a class="md-toc-inner" href="#5-流一般需要不需要关闭如果关闭的话在用什么方法">5. 流一般需要不需要关闭,如果关闭的话在用什么方法,</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n142"><a class="md-toc-inner" href="#一般要在那个代码块里面关闭比较好">一般要在那个代码块里面关闭比较好，</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n143"><a class="md-toc-inner" href="#处理流是怎么关闭的">处理流是怎么关闭的，</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n144"><a class="md-toc-inner" href="#如果有多个流互相调用传入是怎么关闭的">如果有多个流互相调用传入是怎么关闭的？</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n146"><a class="md-toc-inner" href="#java-数组"><em>java</em> 数组</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n147"><a class="md-toc-inner" href="#1-aarrays-类有哪些方法">1. <em>Aarrays</em> 类有哪些方法</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n154"><a class="md-toc-inner" href="#java-集合"><em>java</em> 集合</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n155"><a class="md-toc-inner" href="#1-常见的集合有哪些">1. 常见的集合有哪些</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n156"><a class="md-toc-inner" href="#map--hashmaptreemaphashtableconcurrenthashmapproperties"><em>Map</em>:  <em>HashMap</em>，<em>TreeMap</em>，<em>HashTable</em>，<em>ConcurrentHashMap</em>，<em>Properties</em></a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n157"><a class="md-toc-inner" href="#set--hashset--treeset--linkedhashset"><em>Set</em>:  <em>HashSet,  TreeSet,  LinkedHashSet</em></a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n158"><a class="md-toc-inner" href="#list--arraylistlinkedliststack--以及--vector--等"><em>List</em>:  <em>ArrayList</em>、<em>LinkedList</em>、<em>Stack</em>  以及  <em>Vector</em>  等 </a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n160"><a class="md-toc-inner" href="#2-常见的集合它们的底层是基于什么实现的">2. 常见的集合它们的底层是基于什么实现的</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n161"><a class="md-toc-inner" href="#map">Map:<span>	</span></a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n173"><a class="md-toc-inner" href="#set---collections-接口）">Set:   <mark>（<em>Collections</em> 接口）</mark></a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n177"><a class="md-toc-inner" href="#list----collections-接口）">List:    <mark>（<em>Collections</em> 接口）</mark></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n185"><a class="md-toc-inner" href="#3-hashmap--和-hashtable-的区别是什么">3. <em>HashMap</em>  和 <em>HashTable</em> 的区别是什么</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n188"><a class="md-toc-inner" href="#4--iterator--是什么">4.  <em>Iterator</em>  是什么？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n193"><a class="md-toc-inner" href="#5--collections--类是什么">5.  <em>Collections</em>  类是什么？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n198"><a class="md-toc-inner" href="#6-collections--类的常用方法">6. <em>Collections</em>  类的常用方法？</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n212"><a class="md-toc-inner" href="#spring-框架"><mark><em>Spring</em> 框架</mark></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n213"><a class="md-toc-inner" href="#1-什么是-spring-"><mark>1. 什么是 <em>spring</em> ？</mark></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n225"><a class="md-toc-inner" href="#2-string-的优缺点是什么"><mark>2. <em>String</em> 的优缺点是什么</mark></a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n226"><a class="md-toc-inner" href="#1--方便解耦简化开发"><mark>1.  方便解耦，简化开发</mark></a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n228"><a class="md-toc-inner" href="#2--aop编程的支持"><mark>2.  AOP编程的支持</mark></a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n230"><a class="md-toc-inner" href="#3--声明事务的支持"><mark>3.  声明事务的支持</mark></a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n232"><a class="md-toc-inner" href="#4--方便程序的测试">4.  方便程序的测试</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n234"><a class="md-toc-inner" href="#5--方便集成各种优秀框架">5.  方便集成各种优秀框架</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n237"><a class="md-toc-inner" href="#6--java-ee-api-使用难度大为降低">6.  Java EE API 使用难度大为降低</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n240"><a class="md-toc-inner" href="#ioc"><mark><em>IOC</em></mark></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n241"><a class="md-toc-inner" href="#1-谈谈自己对于-spring-ioc-的理解">1. 谈谈自己对于 <em>Spring IOC</em> 的理解</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n245"><a class="md-toc-inner" href="#优点-2">优点：</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n249"><a class="md-toc-inner" href="#2--spring-ioc-的实现机制">2.  <em>Spring IOC</em> 的实现机制</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n252"><a class="md-toc-inner" href="#3-ioc-和-di-都区别是什么">3. <strong><em>IOC</em></strong> 和 <strong><em>DI</em></strong> 都区别是什么</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n256"><a class="md-toc-inner" href="#4-spring-ioc-容器加载过程"><mark>4. <strong><em>Spring IOC</em></strong> 容器加载过程</mark></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n260"><a class="md-toc-inner" href="#aop"><mark><em>AOP</em></mark></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n261"><a class="md-toc-inner" href="#1-谈谈自己对于-spring-aop-的理解">1. 谈谈自己对于 <em>Spring AOP</em> 的理解</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n269"><a class="md-toc-inner" href="#bean"><em><mark>Bean</mark></em></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n270"><a class="md-toc-inner" href="#1-什么是spring-bean">1. 什么是<strong><em>Spring Bean</em></strong>?   </a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n273"><a class="md-toc-inner" href="#2-spring中的bean生命周期了解过吗"><mark>2. Spring中的bean生命周期了解过吗？</mark></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n287"><a class="md-toc-inner" href="#3-spring-的bean-的作用域有哪些"><mark>3. Spring 的Bean 的作用域有哪些？</mark></a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n288"><a class="md-toc-inner" href="#1-singleto-唯一的-bean-实例--单例）">1. <mark>singleto</mark>: 唯一的 Bean 实例  <mark>（单例）</mark></a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n289"><a class="md-toc-inner" href="#2-prototype--每次请求都会创建一个新的-bean--多例）">2. <mark>prototype</mark> ： 每次请求都会创建一个新的 Bean  <mark>（多例）</mark></a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n290"><a class="md-toc-inner" href="#3-request-每一次http请求都会生成一个新的bean--该bean-仅在当前的http-request-内有效">3. <mark>request</mark>: 每一次Http请求都会生成一个新的Bean ， 该bean 仅在当前的Http <mark>request</mark> 内有效</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n291"><a class="md-toc-inner" href="#4-session-每一次http请求都会生成一个新的bean--该bean-仅在当前的http-session内有效">4. <mark>session</mark>： 每一次Http请求都会生成一个新的Bean ， 该bean 仅在当前的Http <mark>session</mark>内有效</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n292"><a class="md-toc-inner" href="#5-global-session全局session的作用域仅仅在基于portlet-的-web应用中才有意义">5. <mark>global-session</mark>：全局session的作用域，仅仅在基于Portlet 的 Web应用中才有意义，</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n293"><a class="md-toc-inner" href="#spring5中已经没有了portlet是能够生成语义代码例如html）片段的小型java-web插件它们基于portlet容器可以像servlet一样处理http请求但是与servlet不同每个portlet都有不同的会话">Spring5中已经没有了。Portlet是能够生成语义代码（例如HTML）片段的小型Java Web插件。它们基于Portlet容器，可以像Servlet一样处理HTTP请求。但是与Servlet不同，每个Portlet都有不同的会话。</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n295"><a class="md-toc-inner" href="#4-将一个类声明为--spring--的--bean--有哪些方式"><mark>4. 将一个类声明为  <em>Spring</em>  的  <em>bean</em>  有哪些方式？</mark></a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n296"><a class="md-toc-inner" href="#1-xml-bean-class-comtulinguserservice--id-">1. xml: &lt;bean class-“com.tuling.userservice”  id =“”&gt;</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n297"><a class="md-toc-inner" href="#2-component-controllerservice-repostory--前提是需要配置扫描component-scan--spring-底层通过-反射创建对象">2. @<em>Component</em>( @<em>Controller</em>,@<em>Service</em> ,@<em>Repostory</em> ) 前提是：需要配置扫描<em>component-scan</em>  <mark>spring 底层通过 反射创建对象</mark></a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n298"><a class="md-toc-inner" href="#3-javaconfig-bean--自己控制实例化的过程--加载方法上-方法的返回值就是创建的对象">3. <em>JavaConfig</em>: @<em>Bean</em>  <mark>自己控制实例化的过程</mark> ， <mark>加载方法上</mark> 方法的<mark>返回值就是创建的对象</mark></a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n299"><a class="md-toc-inner" href="#4import--三种方式">4.@<em>import</em>  三种方式。 </a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n300"><a class="md-toc-inner" href="#importselector">@ImportSelector </a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n301"><a class="md-toc-inner" href="#返回一个string--pathpath2path3-完整类路径）-然后自动创建对象"><mark>返回一个String [ path,path2,path3 ]（完整类路径） 然后自动创建对象</mark></a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n302"><a class="md-toc-inner" href="#importbeandefinitionregistrar">@ImportBeanDefinitionRegistrar </a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n303"><a class="md-toc-inner" href="#提供了一个beandefinitionregistry-注册器可以动态注册bean"><mark>提供了一个BeanDefinitionRegistry 注册器可以动态注册Bean</mark></a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n304"><a class="md-toc-inner" href="#import-class）直接导入其他的类">@Import （*.Class）<strong>直接导入其他的类</strong></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n306"><a class="md-toc-inner" href="#5-单例bean的优势-">5. 单例Bean的优势 ？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n311"><a class="md-toc-inner" href="#6-spring-的-bean-的线程是安全的吗"><mark>6. Spring 的 Bean 的线程是安全的吗？</mark></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n315"><a class="md-toc-inner" href="#7-spring-如何处理bean的并发问题"><mark>7. Spring 如何处理Bean的并发问题。</mark></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n320"><a class="md-toc-inner" href="#8-spring-实例化-bean-的方式有几种">8. Spring 实例化 Bean 的方式有几种</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n321"><a class="md-toc-inner" href="#1--构造器方式">1.  构造器方式</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n324"><a class="md-toc-inner" href="#2-静态工厂方式">2. 静态工厂方式</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n327"><a class="md-toc-inner" href="#3-实例工厂方式">3. 实例工厂方式</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n329"><a class="md-toc-inner" href="#4-factorvbean方式">4. FactorvBean方式</a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n331"><a class="md-toc-inner" href="#1--getobject--这个方法的返回值是一个-object-类型--可以返回任意你想返回的对象">1.  <mark>getObject</mark>()  这个方法的返回值是一个 Object 类型  <strong>可以返回任意你想返回的对象</strong></a></span><span role="listitem" class="md-toc-item md-toc-h6" data-ref="n332"><a class="md-toc-inner" href="#2--getobjecttype--指定你返回类型的-class">2.  <mark>getObjectType</mark>()  指定你返回类型的 Class。</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n334"><a class="md-toc-inner" href="#9-spring-自动装配-bean-的方式有几种">9. Spring 自动装配 Bean 的方式有几种？</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n335"><a class="md-toc-inner" href="#1-no---不使用任何的自动装配通过手动设置--ref-属性进行赋值--默认）">1. NO :  不使用任何的自动装配，通过手动设置  ref 属性进行赋值  （默认）</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n336"><a class="md-toc-inner" href="#2-byname-根据名字自动装配-bean-如果配置文件中一个bean的property-与-另一个bean的name相同就进行自动给装配">2. ByName: 根据名字自动装配 Bean 如果配置文件中一个Bean的property 与 另一个Bean的Name相同，就进行自动给装配</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n337"><a class="md-toc-inner" href="#3-bytype-通过参数的数据类型自动装配">3. Bytype: 通过参数的数据类型自动装配</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n338"><a class="md-toc-inner" href="#4constructor根据构造函数的参数通过bytype进行匹配-匹配到多个在根据参数名匹配">4.Constructor：根据构造函数的参数通过Bytype进行匹配 ，匹配到多个在根据参数名匹配</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n339"><a class="md-toc-inner" href="#5autodetect--自动探测如果有构造方法通过construct-的方式自动装配否则使用byptype进行装配-30-弃用）">5.Autodetect:  自动探测，如果有构造方法，通过Construct 的方式自动装配，否则使用BypType进行装配。 （3.0 弃用）</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n342"><a class="md-toc-inner" href="#spring--事务"><mark><em>Spring</em></mark>  事务</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n343"><a class="md-toc-inner" href="#1-spring--事务管理的方式有几种">1. <em>Spring</em>  事务管理的方式有几种？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n344"><a class="md-toc-inner" href="#2-spring---事务中的隔离级别有哪几种">2. <em>Spring</em>   事务中的隔离级别有哪几种？</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n346"><a class="md-toc-inner" href="#其他">其他</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n347"><a class="md-toc-inner" href="#1-spring-框架中用到了哪些设计模式">1. <em>Spring</em> 框架中用到了哪些设计模式？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n348"><a class="md-toc-inner" href="#2--component---和-bean-的区别是什么">2.  <em>@Component</em>   和 <em>@Bean</em> 的区别是什么？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n349"><a class="md-toc-inner" href="#3-紧耦合和松耦合的区别如何编写松耦合代码">3. 紧耦合和松耦合的区别，如何编写松耦合代码</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n354"><a class="md-toc-inner" href="#4-javaconfig-是如何取代-xml-文件的">4. <em>javaConfig</em> 是如何取代 <em>xml</em> 文件的</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n360"><a class="md-toc-inner" href="#springmvc"><mark><em>SpringMvc</em></mark></a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n362"><a class="md-toc-inner" href="#mybatis"><mark><em>Mybatis</em></mark></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n363"><a class="md-toc-inner" href="#1-mybatis-是什么">1. Mybatis 是什么？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n369"><a class="md-toc-inner" href="#2-和--的区别是什么">2..#{} 和 ${} 的区别是什么？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n374"><a class="md-toc-inner" href="#3mybatis是如何将-sql-执行结果封装为目标对象并返回的-都有哪些映射形式">3.<em>Mybatis</em>是如何将 <em>sql</em> 执行结果封装为目标对象并返回的？ 都有哪些映射形式？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n378"><a class="md-toc-inner" href="#4-mybatis-中如何获取自增主键值">4. <em>Mybatis</em> 中如何获取自增主键值</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n383"><a class="md-toc-inner" href="#springboot"><em><mark>SpringBoot</mark></em></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n384"><a class="md-toc-inner" href="#1-spring-boot---有哪些优点">1. <em>Spring Boot</em>   有哪些优点？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n385"><a class="md-toc-inner" href="#2-spring-相较于-springboot-有哪些不同">2. <em>Spring</em> 相较于 <em>SpringBoot</em> 有哪些不同</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n386"><a class="md-toc-inner" href="#3-spring-boot---中如何解决跨域问题">3. <em>Spring Boot</em>   中如何解决跨域问题？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n387"><a class="md-toc-inner" href="#4--spring-boot--的核心注解是哪些他由哪几个注解组成的">4.  <em>Spring Boot</em>  的核心注解是哪些？他由哪几个注解组成的？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n388"><a class="md-toc-inner" href="#5--启动类注解有哪些">5.  启动类注解有哪些?</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n393"><a class="md-toc-inner" href="#mysql"><mark><em>Mysql</em></mark> </a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n394"><a class="md-toc-inner" href="#1-说一下什么是事务的acid属性吧">1. 说一下什么是事务的ACID属性吧</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n395"><a class="md-toc-inner" href="#2-事务的隔离级别有哪些">2. 事务的隔离级别有哪些？</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n396"><a class="md-toc-inner" href="#3-解释--mysql--外连接内连接与自连接的区别">3. 解释  <em>MySQL</em>  外连接、内连接与自连接的区别</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n397"><a class="md-toc-inner" href="#4">4.</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n400"><a class="md-toc-inner" href="#java-多线程"><em>Java</em> 多线程</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n401"><a class="md-toc-inner" href="#1--java--如何实现的多线程">1.  <em>java</em>  如何实现的多线程</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n415"><a class="md-toc-inner" href="#设计模式">设计模式</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n416"><a class="md-toc-inner" href="#1单例模式">1.单例模式</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n417"><a class="md-toc-inner" href="#2简单工厂设计模式">2.简单工厂设计模式</a></span></p></div><p>&nbsp;</p><h1 id='java-基础'><em><span>Java</span></em><span> 基础</span></h1><h4 id='1面向对象的四大特性'><span>1.面向对象的四大特性</span></h4><p><span>		</span><mark><span>封装</span></mark><span>：通过对类属性的私有化  无法被直接调用 需要通过get set 方法存取</span></p><p><span>				</span><span>（提高代码安全性，提高代码可复用性，封装细节提高维护性，简化外部调用方便扩展）</span></p><p>&nbsp;</p><p><span>		</span><mark><span>继承</span></mark><span>：子类继承父类 可以减少代码复用性 子类重载重写或者添加新方法的形式，让子类有更多的扩展性</span></p><p><span>					</span></p><p><span>		</span><mark><span>多态</span></mark><span>：主要体现在抽象类和接口 ，抽象类和接口都可以被多个子类，或者实现类继承和实现 这样在创建的时候抽象类和接口 就可以替换子类来维护代码和扩展，接口同理。</span></p><p>&nbsp;</p><h4 id='2和的区别'><span>2.&amp;和&amp;&amp;的区别？</span></h4><h5 id='-分别代表-按位或）-or-逻辑与）'><span>&amp; 分别代表 （按位或） or </span><mark><span>（逻辑与）</span></mark></h5><h5 id='-则代表--短路与）'><span>&amp;&amp; 则代表  </span><mark><span>（短路与）</span></mark></h5><p><span>				</span><span>&amp; 和 &amp;&amp; 虽然意思都是  当表达式的左右两边都为true时则结果为true 但是 &amp; 会 两边的代码都进行运算 例如当判断用户的账户名时 </span></p><p><span>				</span><span>首先判断 </span><code>userCode != null</code><span>  如果不为空再判断   </span><code>userCode.equals(“”)</code></p><p><span>				</span><mark><span>&amp;：当</span><code>userCode = null</code><span> 的时候  ，已经不能再判断 </span><code>userCode.equals(“”)</code><span>了 会报空指针异常</span></mark></p><p><span>				</span><mark><span>&amp;&amp;：而这个就不会出现这个问题，当表达式左边的运算结果为false时，就会放弃执行判断空字符的</span></mark><span>				</span><mark><span>代码，这就是为什么它叫短路或。</span></mark></p><p>&nbsp;</p><h4 id='3-final有什么用'><span>3. </span><em><span>final</span></em><span>有什么用？</span></h4><h5 id='31-被--final--修饰的类不可以被继承'><span>3.1 被  </span><em><span>final</span></em><span>  修饰的类不可以被继承</span></h5><h5 id='32-被-final--修饰的方法不可以被重写'><span>3.2 被 final  修饰的方法不可以被重写</span></h5><h5 id='33-被-final--修饰的变量'><span>3.3 被 final  修饰的变量  </span></h5><p><span>				</span><span>基本数据类型： 一旦初始化之后不可改变</span></p><p><span>				</span><span>引用数据类型：</span><mark><span>在其初始化之后不可以指向另一个对象，但是这个对象中的内容可以改变</span></mark></p><p><span>						</span></p><h4 id='4-string-str--1-和--string-str--new-string1---一样吗-'><span>4. </span><em><span>String str = &quot;1&quot; 和  String str = new String(&quot;1&quot;)</span></em><span>   </span><mark><span>一样吗 ?</span></mark></h4><h5 id='string-str--1---1存放在常量池中'><em><span>String str = &quot;1&quot;</span></em><span> ：  “1”存放在常量池中。</span></h5><h5 id='string-str--new-string1--new-string1-存放在堆中'><em><span>String str = new String(&quot;1&quot;)</span></em><span> ： </span><em><span>new String(&quot;1&quot;)</span></em><span> 存放在堆中。</span></h5><p>&nbsp;</p><h4 id='5-java-中操作字符串都有哪些类它们之间有什么区别'><span>5. </span><em><span>Java</span></em><span> 中操作字符串都有哪些类？它们之间有什么区别？</span></h4><h5 id='string每次对字符串的修改都会生成一个新的对象并将原有的指针指向新对象'><span>String：每次对字符串的修改，都会生成一个新的对象，并将原有的指针指向新对象</span></h5><h5 id='stringbuffer-在原对象上进行操作-线程安全-多线程）'><span>StringBuffer: 在原对象上进行操作 </span><mark><span>线程安全</span></mark><span> （</span><mark><span>多线程</span></mark><span>）</span></h5><h5 id='stringbuilder-在原对象上进行操作-线程不安全--效率高--单线程）'><span>StringBuilder: 在原对象上进行操作 </span><mark><span>线程不安全</span></mark><span>  </span><mark><span>效率高</span></mark><span>  （</span><mark><span>单线程</span></mark><span>）</span></h5><p>&nbsp;</p><h4 id='6-构造器constructor）是否可被重写override）'><span>6. 构造器（</span><mark><em><span>constructor</span></em></mark><span>）是否可被重写（</span><mark><em><span>override</span></em></mark><span>）？</span></h4><p><span>		</span><span>不可被</span><mark><span>重写和继承</span></mark><span>，但是可以</span><mark><span>重载</span></mark></p><p>&nbsp;</p><h4 id='7是否可以继承string类'><span>7.是否可以继承</span><em><span>String</span></em><span>类？</span></h4><p><span>		</span><span>不可以，</span><mark><span>String类被final修饰</span></mark></p><p>&nbsp;</p><h4 id='8-string类的常用方法有哪些'><span>8. </span><em><span>String</span></em><span>类的常用方法有哪些？</span></h4><p><span>		</span><span>•</span><strong><em><span>indexof()</span></em></strong><span>  返回指定字符的的索引。</span></p><p><span>		</span><strong><em><span>•charAt()</span></em></strong><span>    返回指定索引处的字符。</span></p><p><span>		</span><strong><em><span>•replace()</span></em></strong><span>   字符串替换。</span></p><p><span>		</span><strong><em><span>•trim()</span></em></strong><span>   去除字符串两端空格。</span></p><p><span>		</span><strong><em><span>•splt()</span></em></strong><span>   字符串分割，返回分割后的字符串数组。</span></p><p><span>		</span><strong><em><span>•getBytes()</span></em></strong><span>   返回字符串byte类型数组。</span></p><p><span>		</span><strong><em><span>•length()</span></em></strong><span>   返回字符串长度。</span></p><p><span>		</span><strong><em><span>•toLowerCase()</span></em></strong><span>   将字符串转换为小写字母。</span></p><p><span>		</span><strong><em><span>•toUpperCase()</span></em></strong><span>   将字符串转换为大写字母。</span></p><p><span>		</span><strong><em><span>•substring()</span></em></strong><span>   字符串截取。</span></p><p><span>		</span><strong><em><span>•equals()</span></em></strong><span>   比较字符串是否相等。</span></p><p>&nbsp;</p><h4 id='9-char型变量中能否能不能存储一个中文汉字为什么'><span>9. </span><em><span>char</span></em><span>型变量中能否能不能存储一个中文汉字，为什么？</span></h4><p><span>	</span><span>char可以存储一个中文汉字，因为Java中使用的编码是Unicode(不选择任何特定的编码，直接使用字符在字符集中的编号，这是统一的唯一方法），一个char 类型占2个字节（16 比特），所以放一个中文是没问题的。</span></p><p>&nbsp;</p><h4 id='10-this关键字的用法'><span>10. </span><em><span>this</span></em><span>关键字的用法</span></h4><h5 id='1-普通的引用--this-指向当前对象-本身'><span>1. 普通的引用  </span><em><span>this</span></em><span> 指向当前对象 本身</span></h5><h5 id='2-形参与成员名重复可以用-this-区分'><span>2. 形参与成员名重复，可以用 </span><em><span>this</span></em><span> 区分</span></h5><h5 id='3-引用本类的构造函数'><span>3. 引用本类的构造函数</span></h5><p>&nbsp;</p><h4 id='11-super-关键字的用法'><span>11. </span><em><span>super</span></em><span> 关键字的用法</span></h4><h5 id='super-是指向当前对象父类的引用'><em><span>super</span></em><span> 是指向当前对象父类的引用  </span></h5><h5 id='子类变量与父类变量一致时可用--super--区分'><span>子类变量与父类变量一致时可用  </span><em><span>super</span></em><span>  区分</span></h5><h5 id='调用父类的构造函数'><span>调用父类的构造函数</span></h5><p>&nbsp;</p><h4 id='12-this与super的区别'><span>12. </span><mark><em><span>this</span></em><span>,与</span><em><span>super</span></em><span>,的区别</span></mark></h4><p><span>	</span><strong><em><span>super</span></em><span>  代表当前对象父类的</span><mark><span>引用</span></mark></strong></p><p><span>	</span><strong><em><span>super()</span></em><span>  在子类中</span><mark><span>调用父类的构造方法</span></mark></strong></p><p><span>	</span><strong><em><span>this</span></em><span>  代表当前对象的</span><mark><span>引用</span></mark></strong></p><p><span>	</span><strong><em><span>this()</span></em><span>  调用当前对象的</span><mark><span>构造方法</span></mark></strong></p><h4 id='13-static-存在的主要意义'><span>13. </span><mark><em><span>static</span></em><span>, 存在的主要意义</span></mark></h4><h5 id='修饰变量和方法'><mark><span>修饰变量和方法：</span></mark></h5><p><span>			</span><strong><span>主要意义在于创建</span><mark><span>独立于对象之外</span></mark><span>的，以</span><mark><span>域为单位的变量和方法</span></mark><span>，在</span><mark><span>没有创建对象的时候</span></mark><span>也可以使用其中的变量和方法。</span></strong></p><h5 id='静态代码块'><mark><span>静态代码块</span></mark><span>：</span></h5><p><span>			</span><strong><span>类中可以</span><mark><span>随意</span></mark><span>放置</span><mark><span>单个</span></mark><span>或者</span><mark><span>多个静态代码块</span></mark><span>，这些代码块会在类被加载的时候</span><mark><span>按顺序执行</span></mark><span>，且只执行一次。</span></strong></p><h5 id='优点-1'><mark><span>优点：</span></mark></h5><p><span>					</span><strong><span>优化程序主要体现在，首先是在类加载时优先执行,可以将一些初始化的工作交给它来做，同时又是只执行一次，使用静态代码块再好不过</span></strong></p><p>&nbsp;</p><h4 id='14--break-continue-return-的区别及作用'><span>14.  </span><mark><em><span>break ,continue ,return</span></em><span> 的区别及作用</span></mark></h4><p><span>		</span><mark><span>break</span></mark><span> </span><strong><span>跳出总上一层循环</span></strong><span>，</span><mark><span>不再执行循环(结束当前的循环体)</span></mark><span> </span></p><p><span>		</span><mark><span>continue</span></mark><span> </span><strong><span>跳出本次循环</span></strong><span>，</span><mark><span>继续执行下次循环(结束正在执行的循环 进入下一个循环条件)</span></mark><span> </span></p><p><span>		</span><mark><span>return</span></mark><span> </span><strong><span>程序返回</span></strong><span>，</span><mark><span>不再执行下面的代码(结束当前的方法 直接返回)</span></mark></p><p>&nbsp;</p><h4 id='15-构造方法有哪些特性'><span>15. 构造方法有哪些特性？</span></h4><p><span>		</span><mark><span>名字与类名相同。</span></mark></p><p><span>		</span><mark><span>没有返回值</span></mark></p><p><span>		</span><mark><span>再对象创建的时候自动执行。</span></mark></p><p>&nbsp;</p><h4 id='16-静态变量和实例变量区别'><span>16. </span><mark><span>静态变量和实例变量区别</span></mark></h4><h5 id='静态变量'><mark><span>静态变量</span></mark><span>：</span></h5><p><span>				</span><span>静态变量由于</span><strong><span>不属于任何实例对象</span></strong><span>，</span><strong><span>属于类</span></strong><span>，所以在内存中只有一份，在类的加载过程中，</span><mark><span>JVM只为它分配一次内存空间</span></mark><span>。</span></p><h5 id='实例变量'><mark><span>实例变量</span></mark><span>：</span></h5><p><span>				</span><span>每次创建对象都会为每个对象分配内存空间，</span><strong><span>实例变量是属于实例对象的</span></strong><span>，在内存中，</span><mark><span>创建几次实例对象，就有几份的成员变量。</span></mark></p><h4 id='17-静态方法和实例方法有何不同'><span>17. </span><mark><span>静态方法和实例方法有何不同？</span></mark></h4><p><span>		</span><span>静态方法和实例方法的区别主要体现在两个方面：</span></p><p><span>		</span><span>1. 在外部调用静态方法时，可以使用&quot;类名.方法名&quot;的方式，也可以使用&quot;对象名.方法名&quot;的方式。而实例方法只有后面这种方式。也就是说，调用静态方法可以无需创建对象。</span></p><p><span>		</span><span>2. 静态方法在访问本类的成员时，只允许访问静态成员（即静态成员变量和静态方法），而不允许访问实例成员变量和实例方法；实例方法则无此限制</span></p><p><span>		</span></p><h4 id='18-什么是方法的返回值返回值的作用是什么'><span>18. 什么是方法的返回值？返回值的作用是什么?</span></h4><p><span>		</span><span>返回值是指执行某个方法后代码运行产生的结果，</span></p><p><span>		</span><span>接收这个结果，使得它可以用于其他操作。</span></p><p>&nbsp;</p><h4 id='19-什么是内部类'><span>19. 什么是内部类？ </span></h4><p><span>		</span><span>在类中定义的类，就是内部类。</span></p><h4 id='21-java中异常分为哪些种类'><span>21. </span><em><span>Java</span></em><span>,中异常分为哪些种类？</span></h4><p><span>	</span><img src="C:\Users\32024\AppData\Roaming\Typora\typora-user-images\image-20211010193146690.png" alt="image-20211010193146690" style="zoom:80%;" /></p><p><span>		</span><em><span>Error</span></em><span>：是发生在Jvm虚拟机的</span><mark><span>错误</span></mark><span>。</span></p><p><span>		</span><em><span>Exception</span></em><span>: 是在程序编译阶段，或者运行时发生的异常，分为两类。</span></p><p><span>				</span><mark><span>运行时异常</span></mark><span> ( </span><em><span>Unchecked Exception</span></em><span> )：</span></p><p><span>						</span><strong><span>运行时异常都是 </span><em><span>RuntimeException</span></em><span> 及其子类的异常，例如</span><em><span>NullPointerException</span></em><span>，</span><em><span>IndexOutOfBoundsException</span></em><span> 等，这些异常可以选择捕获处理，也可以不处理，一把都是程序逻辑性的错误引起。</span></strong></p><p><span>				</span><mark><span>非运行时异常</span></mark><span> ( </span><em><span>Checked Exception</span></em><span> )：</span></p><p><span>						</span><span>非运行时异常通常是指除了 RuntimeException 以外的异常，类型上都是属于Exception及其子类。程序语法角度讲是必须进行处理的异常，如果不处理，程序就不能编译通过。</span></p><p><span>						</span><span>例：</span></p><p><span>						</span><img src="D:\桌面\笔记\img\image-20211010195037315.png" alt="image-20211010195037315" style="zoom: 67%;" /></p><p><span>						</span></p><h4 id='22-final-finally-finalize-的区别'><span>22. </span><mark><span>final finally finalize 的区别</span></mark></h4><p><span>		</span><mark><span>final</span></mark><span>  可以修饰类、变量、方法，修饰类表示该类不能被继承、修饰方法表示该方法不能被重写、修饰变量表示该变量是一个常量不能被重新赋值。</span></p><p><span>		</span><mark><span>finally</span></mark><span>  一般作用在try-catch代码块中，在处理异常的时候，通常我们将一定要执行的代码方法finally代码块中，表示不管是否出现异常，该代码块都会执行，一般用来</span><mark><span>存放一些关闭资源的代码</span></mark><span>。</span></p><p><span>		</span><mark><span>finalize</span></mark><span>  </span><mark><span>是一个方法</span></mark><span>，</span><mark><span>属于Object类的一个方法</span></mark><span>，而Object类是所有类的父类，</span><mark><span>该方法一般由垃圾回收器来调用</span></mark><span>，当我们调用System.gc() 方法的时候，由</span><mark><span>垃圾回收器调用finalize()，回收垃圾</span></mark><span>，一个对象是否可回收的最后判断。</span></p><p>&nbsp;</p><h4 id='23-hashcode-介绍'><span>23. </span><mark><em><span>hashCode</span></em><span>() 介绍</span></mark></h4><p><span>		</span><em><span>hashCode</span></em><span>()   是获取该对象的散列码,这是一个int类型的整数，这个哈希码的作用是确定该对象在哈希表中索引位置，</span><em><span>Hash</span></em><span>  定义在  </span><em><span>Object</span></em><span>  中，这意味着  </span><em><span>Java</span></em><span>  中所有的类都有一个  </span><em><span>hashCode()</span></em><span> 。</span></p><p>&nbsp;</p><h4 id='24-抽象类和接口java7）的区别'><span>24. 抽象类和接口（</span><em><span>Java7</span></em><span>）的区别</span></h4><h4 id='25-java-8的接口新增了哪些特性'><span>25. </span><em><span>Java 8</span></em><span>的接口新增了哪些特性？</span></h4><h4 id='26-重写和重载的区别'><span>26. 重写和重载的区别</span></h4><h4 id='27-为什么要有hashcode这个函数'><span>27. 为什么要有HashCode这个函数？</span></h4><p><span>		</span></p><p><span>		</span></p><h1 id='java-io'><em><span>java Io</span></em></h1><h4 id='1--java中有几种类型的流'><span>1.  </span><em><span>Java</span></em><span>中有几种类型的流？</span></h4><p><span>		</span><span>inputStream 输入流</span></p><p><span>		</span><span>outStream  输入流</span></p><p><span>		</span></p><h4 id='2-什么是-java-序列化'><span>2. 什么是 </span><em><span>java</span></em><span> 序列化</span></h4><h4 id='3-如何实现-java-序列化'><span>3. 如何实现 </span><em><span>java</span></em><span> 序列化？</span></h4><h4 id='4-字节流和字符流的区别'><span>4. 字节流和字符流的区别？ </span></h4><h4 id='5-流一般需要不需要关闭如果关闭的话在用什么方法'><span>5. 流一般需要不需要关闭,如果关闭的话在用什么方法,</span></h4><h4 id='一般要在那个代码块里面关闭比较好'><span>一般要在那个代码块里面关闭比较好，</span></h4><h4 id='处理流是怎么关闭的'><span>处理流是怎么关闭的，</span></h4><h4 id='如果有多个流互相调用传入是怎么关闭的'><span>如果有多个流互相调用传入是怎么关闭的？</span></h4><p>&nbsp;</p><h1 id='java-数组'><em><span>java</span></em><span> 数组</span></h1><h4 id='1-aarrays-类有哪些方法'><span>1. </span><em><span>Aarrays</span></em><span> 类有哪些方法</span></h4><p><span>		</span><strong><em><span>asList()</span></em></strong><span>  数组转变为集合</span></p><p><span>		</span><strong><em><span>fill()</span></em></strong><span>  用单个元素填充整个数组</span></p><p><span>		</span><strong><em><span>sort()</span></em></strong><span>  数组升序排序</span></p><p><span>		</span><strong><em><span>parallelSort()</span></em></strong><span>  数组升序排序（大规模数据使用）</span></p><p><span>		</span><strong><em><span>binarySearch()</span></em></strong><span>  二分查找法(必须是一个升序数组)</span></p><p>&nbsp;</p><h1 id='java-集合'><em><span>java</span></em><span> 集合</span></h1><h4 id='1-常见的集合有哪些'><span>1. 常见的集合有哪些</span></h4><h5 id='map--hashmaptreemaphashtableconcurrenthashmapproperties'><em><span>Map</span></em><span>:  </span><em><span>HashMap</span></em><span>，</span><em><span>TreeMap</span></em><span>，</span><em><span>HashTable</span></em><span>，</span><em><span>ConcurrentHashMap</span></em><span>，</span><em><span>Properties</span></em></h5><h5 id='set--hashset--treeset--linkedhashset'><em><span>Set</span></em><span>:  </span><em><span>HashSet,  TreeSet,  LinkedHashSet</span></em></h5><h5 id='list--arraylistlinkedliststack--以及--vector--等'><em><span>List</span></em><span>:  </span><em><span>ArrayList</span></em><span>、</span><em><span>LinkedList</span></em><span>、</span><em><span>Stack</span></em><span>  以及  </span><em><span>Vector</span></em><span>  等 </span></h5><p>&nbsp;</p><h4 id='2-常见的集合它们的底层是基于什么实现的'><span>2. 常见的集合它们的底层是基于什么实现的</span></h4><h5 id='map'><span>Map:</span><span>	</span></h5><p><span>				</span><strong><em><span>HashMap</span></em><span>：底层结构(</span><mark><span>数组+单项链表</span></mark><span>)  哈希冲突大于8  链表变红黑树</span></strong></p><p><span>						</span><mark><span>key 和 value 都是允许为空的，它的长度默认为16个哈希槽，也就是数组长度为16，其中的每个位置存储的都是一个链表，线程不安全，哈希槽扩容的时候长度必须是 2 的幂，在哈希槽占用的为75% 的时候扩容为原来的双倍，在哈希冲突大于8的时候，会将链表结构转化为 红黑树</span></mark></p><p><span>			</span><mark><span>数据插入</span></mark><span>：</span></p><p><span>				</span><span>位置查找：通过传入的key的hashCode值 参与高位运算得到新的hash值，使用新的hash值和数组的长度 -1 进行 &amp; 计算 得到在数组的下标。</span></p><p><span>				</span><span>插入阶段：获取下标的根节点，和传入hash值和key判断，相同的覆盖。不相同的，循环遍历根节点，用次节点的key和hash值和传入的hash值和key判断，相同覆盖，不相同一直遍历到次节点的值为空的时候，就代表这个数据没有重复，并将传入的key和value覆盖到为空的次节点中。</span></p><p><span>				</span></p><p><span>				</span><strong><em><span>HashTable</span></em><span>：链表结构(</span><mark><span>数组+单项链表</span></mark><span>)  哈希冲突大于8  链表变红黑树</span></strong></p><p><span>						</span><span>加入了同步锁  </span><em><span>synchronized</span></em><span>  </span><mark><span>线程安全</span></mark><span>  </span><mark><span>k/v* 不能为</span><em><span>null</span></em></mark></p><p><span>				</span><strong><em><span>LinkedHashMap</span></em><span>： 基于  </span><em><mark><span>HashMap</span></mark></em><span>  加入了</span><mark><span>维护顺序的双向链表</span></mark></strong></p><p><span>				</span><strong><em><span>TreeMap</span></em><span>：红黑树</span></strong></p><p>&nbsp;</p><h5 id='set---collections-接口）'><span>Set:   </span><mark><span>（</span><em><span>Collections</span></em><span> 接口）</span></mark></h5><p><span>				</span><strong><em><span>HashSet</span></em><span>：链表结构(</span><mark><span>数组+单项链表</span></mark><span>)  哈希冲突大于8  链表变红黑树</span></strong></p><p><span>				</span><strong><em><span>LinkedHashSet</span></em><span>： 基于  </span><em><mark><span>HashMap</span></mark></em><span>  加入了</span><mark><span>维护顺序的双向链表</span></mark><span>*</span></strong><span>*</span></p><p><span>				</span><strong><em><span>TreeSet</span></em><span>：底层是 红黑树</span></strong></p><h5 id='list----collections-接口）'><span>List:    </span><mark><span>（</span><em><span>Collections</span></em><span> 接口）</span></mark></h5><p><span>			</span><strong><em><span>ArrayList：</span></em><span> 底层是由动态数组实现的</span></strong></p><p><span>					</span><mark><span>线程不安全</span></mark><span>，在</span><mark><span>容量达到一半扩充</span></mark><span>为原来的</span><mark><span>1.5倍</span></mark><span>，查询效率高</span></p><p><span>			</span><strong><em><span>LinkedList：</span></em><span> 双向链表结构</span></strong></p><p><span>					</span><span>插入和删除效率更高，查询效率低</span></p><p><span>			</span><strong><em><span>Vector</span></em><span>：基于数组</span></strong></p><p><span>					</span><span>线程安全，在</span><mark><span>容量满时扩充</span></mark><span>为原来的</span><mark><span>2倍</span></mark></p><p><span>			</span></p><h4 id='3-hashmap--和-hashtable-的区别是什么'><span>3. </span><em><span>HashMap</span></em><span>  和 </span><em><span>HashTable</span></em><span> 的区别是什么</span></h4><p><span>		</span><strong><span>HashMap没有考虑同步，是线程不安全的；Hashtable使用了synchronized关键字，是线程安全的；HashMap允许K/V都为null；后者K/V都不允许为null；</span></strong><span> </span></p><p>&nbsp;</p><h4 id='4--iterator--是什么'><span>4.  </span><em><span>Iterator</span></em><span>  是什么？</span></h4><p><span>		</span><em><span>Iterator</span></em><span>  接口提供遍历任何  </span><em><span>Collection</span></em><span>  的接口。我们可以从一个  </span><em><span>Collection</span></em><span>  中使用迭代器方法</span></p><p><span>来获取迭代器实例。迭代器取代了 </span><em><span>Java</span></em><span> 集合框架中的 </span><em><span>Enumeration</span></em><span>。迭代器允许调用者在迭</span></p><p><span>代过程中移除元素。</span></p><p>&nbsp;</p><h4 id='5--collections--类是什么'><span>5.  </span><em><span>Collections</span></em><span>  类是什么？</span></h4><p><span>			</span><em><span>Java.util.Collections</span></em><span>  是一个工具类仅包含静态方法，它们操作或返回集合。它包含操作集合</span></p><p><span>的多态算法，返回一个由指定集合支持的新集合和其它一些内容。这个类包含集合框架算法的</span></p><p><span>方法，比如折半搜索、排序、混编和逆序等</span></p><p>&nbsp;</p><h4 id='6-collections--类的常用方法'><span>6. </span><em><span>Collections</span></em><span>  类的常用方法？</span></h4><p><span>		</span><strong><em><span>sort()</span></em></strong><span>   对集合进行排序 （List集合）</span></p><p><span>		</span><strong><em><span>reverse()</span></em></strong><span>  集合元素反转</span></p><p><span>		</span><strong><em><span>shuffle()</span></em></strong><span>  打乱顺序集合顺序</span></p><p><span>		</span><strong><em><span>binarysearch()</span></em></strong><span>  二分查找法 返回指定元素的下标</span></p><p><span>		</span><strong><em><span>indexOfSubList()</span></em></strong><span>  查找第二个集合元素首次出现在第一个集合的下标</span></p><p><span>		</span><strong><em><span>lastindexOfSubList()</span></em></strong><span>  查找第二个集合元素最后出现在第一个集合的下标</span></p><p><span>		</span><strong><em><span>replaceAll()</span></em></strong><span>   指定一个元素 将集合中相符的元素替换成另一个指定元素</span></p><p><span>		</span><strong><em><span>rotate()</span></em></strong><span>  把集合先后的元素挪动 指定位数  超出下标的元素存放到集合头部</span></p><p><span>		</span><strong><em><span>copy()</span></em></strong><span>  把次要集合的元素拷贝到主要集合中  相同索引的元素被覆盖</span></p><p><span>		</span><strong><em><span>swap()</span></em></strong><span>   把集合中指定下标的元素做交换</span></p><p><span>		</span><strong><em><span>fill()</span></em></strong><span>   指定一个对象，用该对象把集合完全覆盖</span></p><p><span>		</span></p><p>&nbsp;</p><h1 id='spring-框架'><mark><em><span>Spring</span></em><span> 框架</span></mark></h1><h4 id='1-什么是-spring-'><mark><span>1. 什么是 </span><em><span>spring</span></em><span> ？</span></mark></h4><p><span>		</span><mark><em><span>Spring</span></em><span>是一个生态</span></mark><span>： 可以构建java所需的一切基础设施.</span></p><p><span>		</span><em><span>Spring :  </span><mark><span>Spring Famework</span></mark></em></p><p>&nbsp;</p><p><span>		</span><strong><span>核心解释：</span></strong></p><p><span>		</span><mark><strong><em><span>Spring</span></em><span>是一个轻量级的框架：</span></strong></mark></p><p><span>		</span><mark><strong><em><span>Spring</span></em><span>是为了解决企业级应用开发的业务逻辑层和其他层对象与对象耦合的问题</span></strong></mark></p><p><span>		</span><mark><em><span>Spring</span></em><span>是一个</span><em><span>IOC</span></em><span> 和 </span><em><span>AOP</span></em><span>的容器框架</span></mark></p><p><span>						</span><strong><em><span>IOC</span></em></strong><span>：控制反转</span></p><p><span>						</span><strong><em><span>AOP</span></em></strong><span>：面向切面变成</span></p><p><span>						</span><strong><span>容器</span></strong><span>： 包含并管理应用对象的生命周期</span></p><p>&nbsp;</p><h4 id='2-string-的优缺点是什么'><mark><span>2. </span><em><span>String</span></em><span> 的优缺点是什么</span></mark></h4><h6 id='1--方便解耦简化开发'><mark><span>1.  方便解耦，简化开发</span></mark></h6><p><span>			</span><strong><span>通过IOC容器集中管理对象，对象与对象之间的耦合度减低，方便维护对象</span></strong><span>	</span></p><h6 id='2--aop编程的支持'><mark><span>2.  AOP编程的支持</span></mark></h6><p><span>			</span><strong><span>通过AOP功能，可以进行面向切面的编程，在不修改代码的情况下，对业务代码进行增强，较少重复,提高开发效率，方便维护</span></strong></p><h6 id='3--声明事务的支持'><mark><span>3.  声明事务的支持</span></mark></h6><p><span>			</span><strong><span>提高开发效率，值需要一个简单的注解</span><em><mark><span>@Transactional</span></mark></em><span> 就完成声明事务</span></strong></p><h6 id='4--方便程序的测试'><span>4.  方便程序的测试</span></h6><p><span>			</span><em><span>Spring</span></em><span>  对 </span><em><span>Junit4</span></em><span>  支持 ，可以通过注解方便的测试Spring程序</span></p><h6 id='5--方便集成各种优秀框架'><span>5.  方便集成各种优秀框架</span></h6><p><span>			</span><em><span>Spring</span></em><span> 不排斥各种优秀的开源框架，相反，</span><em><span>Spring</span></em><span>可以降低各种框架的使用难度，</span><em><span>Spring</span></em><span>提供了对于各种优秀框架的直接支持（例如：</span><em><span>Struts</span></em><span>， </span><em><span>Hibernate</span></em><span>，</span><em><span>Hessian</span></em><span>, </span><em><span>Quartz</span></em><span>）</span></p><p><span>			</span><span>非常强大的粘合能力，集成能力，只需要简单配置就可以集成第三方框架</span></p><h6 id='6--java-ee-api-使用难度大为降低'><span>6.  Java EE API 使用难度大为降低</span></h6><p><span>			</span><strong><em><span>String</span></em></strong><span> 对于很多难用的  </span><strong><em><span>Java EE API</span></em></strong><span>   (如  </span><strong><em><span>JDBC</span></em></strong><span>， </span><strong><em><span>javaMail</span></em></strong><span> ， </span><strong><span>远程调用</span></strong><span>  ，</span><strong><span>异步通信</span></strong><span>)，都提供了封装，</span><mark><span>通过Spring的简单分装，使用难度大大降低</span></mark></p><p>&nbsp;</p><h3 id='ioc'><mark><em><span>IOC</span></em></mark></h3><h4 id='1-谈谈自己对于-spring-ioc-的理解'><span>1. 谈谈自己对于 </span><em><span>Spring IOC</span></em><span> 的理解</span></h4><p><span>		</span><em><span>IOC</span></em><span>  即为控制反转，</span><mark><span>它把本来通过程序员控制创建对象的权利交给了Spring</span></mark><span>，</span><mark><span>把创建对象的操作从代码本身转移到了外部容器</span></mark><span>，</span></p><p><span>		</span><em><span>Spring IOC</span></em><span>   负责</span><strong><span>创建对象，管理对象，装配对象，配置对象，并管理这些对象的生命周期</span></strong><span>。</span><mark><span>(通过</span><em><span>DI</span></em><span>，依赖注入的方式)</span></mark></p><p>&nbsp;</p><h6 id='优点-2'><span>优点：</span></h6><p><span>			</span><span>集中管理对象，方便维护，</span></p><p><span>			</span><span>降低了代码耦合度。</span></p><p>&nbsp;</p><h4 id='2--spring-ioc-的实现机制'><span>2.  </span><em><span>Spring IOC</span></em><span> 的实现机制</span></h4><p><span>		</span><span>简单工厂的设计模式，和反射创建Bena对象。</span></p><p>&nbsp;</p><h4 id='3-ioc-和-di-都区别是什么'><span>3. </span><strong><em><span>IOC</span></em></strong><span> 和 </span><strong><em><span>DI</span></em></strong><span> 都区别是什么</span></h4><p><span>		</span><strong><em><span>IOC</span></em></strong><span>  是一种控制反转的</span><mark><span>一种思想</span></mark><span>，</span></p><p><span>		</span><strong><em><span>DI</span></em></strong><span>   是这种</span><mark><span>思想的实现</span></mark></p><p>&nbsp;</p><h4 id='4-spring-ioc-容器加载过程'><mark><span>4. </span><strong><em><span>Spring IOC</span></em></strong><span> 容器加载过程</span></mark></h4><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h3 id='aop'><mark><em><span>AOP</span></em></mark></h3><h4 id='1-谈谈自己对于-spring-aop-的理解'><span>1. 谈谈自己对于 </span><em><span>Spring AOP</span></em><span> 的理解</span></h4><p><span>		</span><strong><em><span>AOP</span></em></strong><span> (面向切面编程) 能够将哪些与</span><mark><span>业务无关</span></mark><span>，却为业务模块所</span><mark><span>共同调用的逻辑或者责任（事务处理，日志管理，权限控制等）封装起来</span></mark><span>，便于较少系统代码的重复，降低耦合，利于拓展维护。</span></p><p>&nbsp;</p><p><span>		</span><strong><em><span>Spring AOP</span></em></strong><span> 是基于</span><mark><span>动态代理</span></mark><span>，如果要代理的对象实现了某个接口，那么 </span><strong><em><span>Spring AOP</span></em></strong><span>  就会使用    </span><strong><em><span>JDK</span></em><span>  动态代理</span></strong><span>   去创建代理对象；</span></p><p><span>		</span><span>对于没有实现接口的对象使用  </span><strong><em><span>CGlib</span></em><span>  动态代理</span></strong><span>   生成一个</span><mark><span>被代理对象的子类</span></mark><span>来作为代理。</span></p><p><span>		</span><span>使用 AOP 之后 我们可以把一些</span><mark><span>通用的功能抽象出来</span></mark><span>，在</span><mark><span>需要的的地方直接使用</span></mark><span>，这样可以大大的简化代码量。</span></p><p><span>		</span><span>我们需要添加新功能也方便，提高了系统的扩展性。 </span><mark><span>日志功能，事务管理，权限管理都用到了 AOP</span></mark></p><p>&nbsp;</p><h3 id='bean'><em><mark><span>Bean</span></mark></em></h3><h4 id='1-什么是spring-bean'><span>1. 什么是</span><strong><em><span>Spring Bean</span></em></strong><span>?   </span></h4><p><span>			</span><mark><span>(被IOC管理的对象就称之为Bean)</span></mark><span>	</span></p><p><span>				</span></p><h4 id='2-spring中的bean生命周期了解过吗'><mark><span>2. Spring中的bean生命周期了解过吗？</span></mark></h4><p><span>		</span><span>Bean的生命周期就是Bean从创建到销毁的过程，主要步骤为</span></p><p><span>				</span><span>1.通过XML文件配置 或者注解的方式 读取Bean的配置信息注册到BeanDefinition则统一存放在BeanDefinitionMap中。</span></p><p><span>				</span><span>2.遍历BeanDefinitionMap 调用Beanfactoy .getBean(Class) 方法创建对象</span></p><p><span>				</span><span>而getBean方法的过程也就是bean的创建的过程。</span></p><p><span>				</span><span>由Spring通过反射的方式创建对象，也可以在XML文件中通过给Bean配置Factory—mothory设置指定的方法名来自定义创建的对象，或者实现FactotyBean接口的getObject方法，手动指定创建的Bean对象，甚至可以在方法上加上注解@Bean() 指定方法的返回值就是创建的Bean。</span></p><p><span>				</span><span>完成对象的创建后属性赋值，通过注解@Autowired ， @Value，完成自动注入。</span></p><p><span>				</span><span>属性赋值完成后，进入初始化阶段，</span></p><p><span>					</span><span>在开始初始化之前调用BeanPostoriceessor接口中的Before 方法，</span></p><p><span>					</span><span>调用各种Awara接口对应的实现类中指定的方法，</span></p><p><span>					</span><span>在初始化结束之后调用BeanPostoriceessor 接口中的After 方法，</span></p><p><span>				</span><span>这时候bean就会被存放到singletonObjects 中。</span></p><p><span>				</span><span>3.在容器关闭的时候会调用销毁方法。</span></p><p>&nbsp;</p><h4 id='3-spring-的bean-的作用域有哪些'><mark><span>3. Spring 的Bean 的作用域有哪些？</span></mark></h4><h5 id='1-singleto-唯一的-bean-实例--单例）'><span>1. </span><mark><span>singleto</span></mark><span>: 唯一的 Bean 实例  </span><mark><span>（单例）</span></mark></h5><h5 id='2-prototype--每次请求都会创建一个新的-bean--多例）'><span>2. </span><mark><span>prototype</span></mark><span> ： 每次请求都会创建一个新的 Bean  </span><mark><span>（多例）</span></mark></h5><h5 id='3-request-每一次http请求都会生成一个新的bean--该bean-仅在当前的http-request-内有效'><span>3. </span><mark><span>request</span></mark><span>: 每一次Http请求都会生成一个新的Bean ， 该bean 仅在当前的Http </span><mark><span>request</span></mark><span> 内有效</span></h5><h5 id='4-session-每一次http请求都会生成一个新的bean--该bean-仅在当前的http-session内有效'><span>4. </span><mark><span>session</span></mark><span>： 每一次Http请求都会生成一个新的Bean ， 该bean 仅在当前的Http </span><mark><span>session</span></mark><span>内有效</span></h5><h5 id='5-global-session全局session的作用域仅仅在基于portlet-的-web应用中才有意义'><span>5. </span><mark><span>global-session</span></mark><span>：全局session的作用域，仅仅在基于Portlet 的 Web应用中才有意义，</span></h5><h6 id='spring5中已经没有了portlet是能够生成语义代码例如html）片段的小型java-web插件它们基于portlet容器可以像servlet一样处理http请求但是与servlet不同每个portlet都有不同的会话'><span>Spring5中已经没有了。Portlet是能够生成语义代码（例如HTML）片段的小型Java Web插件。它们基于Portlet容器，可以像Servlet一样处理HTTP请求。但是与Servlet不同，每个Portlet都有不同的会话。</span></h6><p>&nbsp;</p><h4 id='4-将一个类声明为--spring--的--bean--有哪些方式'><mark><span>4. 将一个类声明为  </span><em><span>Spring</span></em><span>  的  </span><em><span>bean</span></em><span>  有哪些方式？</span></mark></h4><h5 id='1-xml-bean-class-comtulinguserservice--id-'><span>1. xml: &lt;bean class-“com.tuling.userservice”  id =“”&gt;</span></h5><h5 id='2-component-controllerservice-repostory--前提是需要配置扫描component-scan--spring-底层通过-反射创建对象'><span>2. @</span><em><span>Component</span></em><span>( @</span><em><span>Controller</span></em><span>,@</span><em><span>Service</span></em><span> ,@</span><em><span>Repostory</span></em><span> ) 前提是：需要配置扫描</span><em><span>component-scan</span></em><span>  </span><mark><span>spring 底层通过 反射创建对象</span></mark></h5><h5 id='3-javaconfig-bean--自己控制实例化的过程--加载方法上-方法的返回值就是创建的对象'><span>3. </span><em><span>JavaConfig</span></em><span>: @</span><em><span>Bean</span></em><span>  </span><mark><span>自己控制实例化的过程</span></mark><span> ， </span><mark><span>加载方法上</span></mark><span> 方法的</span><mark><span>返回值就是创建的对象</span></mark></h5><h5 id='4import--三种方式'><span>4.@</span><em><span>import</span></em><span>  三种方式。 </span></h5><h5 id='importselector'><span>@ImportSelector </span></h5><h5 id='返回一个string--pathpath2path3-完整类路径）-然后自动创建对象'><mark><span>返回一个String [ path,path2,path3 ]（完整类路径） 然后自动创建对象</span></mark></h5><h5 id='importbeandefinitionregistrar'><span>@ImportBeanDefinitionRegistrar </span></h5><h5 id='提供了一个beandefinitionregistry-注册器可以动态注册bean'><mark><span>提供了一个BeanDefinitionRegistry 注册器可以动态注册Bean</span></mark></h5><h5 id='import-class）直接导入其他的类'><span>@Import （*.Class）</span><strong><span>直接导入其他的类</span></strong></h5><p>&nbsp;</p><h4 id='5-单例bean的优势-'><span>5. 单例Bean的优势 ？</span></h4><p><span>		</span><strong><span>1.  减少新创建实例的消耗，通过反射和cglib 生成的对象都是会一定程度的损耗内存，给对象分配内存也设计复杂的算法。而使用单例，提高服务器内存利用率，减少服务器内存消耗</span></strong></p><p><span>		</span><strong><span>2. 较少JVM 垃圾回收的使用率，  因为不会给每一个请求都生成Bean实例，所以自然回收的对象少了</span></strong></p><p><span>		</span><strong><span>3. 可以快速找到Bean 因为单例获取的Bean 除了第一次生成之外都是冲缓存中获取所以速度很快</span></strong></p><p>&nbsp;</p><h4 id='6-spring-的-bean-的线程是安全的吗'><mark><span>6. Spring 的 Bean 的线程是安全的吗？</span></mark></h4><p><span>		</span><strong><span>1.如果单例Bean 再类中</span><mark><span>声明了成员变量并且，有读写操作</span></mark><span>，线程就会</span><mark><span>不安全</span></mark></strong></p><p><span>		</span><strong><span>2. 但是，只需要</span><mark><span>把变量声明在方法中</span></mark><span>，这个单例Bean线程就是</span><mark><span>安全的</span></mark><span>。</span></strong></p><p>&nbsp;</p><h4 id='7-spring-如何处理bean的并发问题'><mark><span>7. Spring 如何处理Bean的并发问题。</span></mark></h4><p><span>		</span><strong><span>1. 将Bean对象设置为多例</span></strong></p><p><span>		</span><strong><span>2. 将成员变量放在Threadlocal 中</span></strong></p><p><span>		</span><strong><span>3. 加同步锁  但是会影响服务器的吞吐量，并行变串行。</span></strong></p><p>&nbsp;</p><h4 id='8-spring-实例化-bean-的方式有几种'><span>8. Spring 实例化 Bean 的方式有几种</span></h4><h5 id='1--构造器方式'><span>1.  构造器方式</span></h5><p><span>				</span><bean calss="com…….."><span>  @Component 注解  获取完整类路径</span></p><p><span>				</span><span>存放到 </span><em><mark><span>BeanDefinition.beanClass</span></mark></em><span> 中  Spring 就会根据BeanClass 通过</span><mark><span>反射的方式创建Bean对象</span></mark></p><h5 id='2-静态工厂方式'><span>2. 静态工厂方式</span></h5><p><span>				</span><span>xml文件中给相应的Bean对象 配置 Factory-method = “ </span><mark><span>对象的某个方法</span></mark><span>”</span></p><p><span>				</span><span>这个方法    </span><mark><span>返回一个自己手动创建的对象</span></mark><span>   注： 这个方法必须声明为 Static （静态的）</span></p><h5 id='3-实例工厂方式'><span>3. 实例工厂方式</span></h5><p><span>				</span><span>在静态工厂配置基础上 加入一个指定的 Factory-bean</span></p><h5 id='4-factorvbean方式'><span>4. FactorvBean方式</span></h5><p><span>				</span><span>bean实现 FactorvBean 实现其中的两个方法</span></p><h6 id='1--getobject--这个方法的返回值是一个-object-类型--可以返回任意你想返回的对象'><span>1.  </span><mark><span>getObject</span></mark><span>()  这个方法的返回值是一个 Object 类型  </span><strong><span>可以返回任意你想返回的对象</span></strong></h6><h6 id='2--getobjecttype--指定你返回类型的-class'><span>2.  </span><mark><span>getObjectType</span></mark><span>()  指定你返回类型的 Class。</span></h6><p>&nbsp;</p><h4 id='9-spring-自动装配-bean-的方式有几种'><span>9. Spring 自动装配 Bean 的方式有几种？</span></h4><h5 id='1-no---不使用任何的自动装配通过手动设置--ref-属性进行赋值--默认）'><span>1. NO :  不使用任何的自动装配，通过手动设置  ref 属性进行赋值  （默认）</span></h5><h5 id='2-byname-根据名字自动装配-bean-如果配置文件中一个bean的property-与-另一个bean的name相同就进行自动给装配'><span>2. ByName: 根据名字自动装配 Bean 如果配置文件中一个Bean的property 与 另一个Bean的Name相同，就进行自动给装配</span></h5><h5 id='3-bytype-通过参数的数据类型自动装配'><span>3. Bytype: 通过参数的数据类型自动装配</span></h5><h5 id='4constructor根据构造函数的参数通过bytype进行匹配-匹配到多个在根据参数名匹配'><span>4.Constructor：根据构造函数的参数通过Bytype进行匹配 ，匹配到多个在根据参数名匹配</span></h5><h5 id='5autodetect--自动探测如果有构造方法通过construct-的方式自动装配否则使用byptype进行装配-30-弃用）'><span>5.Autodetect:  自动探测，如果有构造方法，通过Construct 的方式自动装配，否则使用BypType进行装配。 （3.0 弃用）</span></h5><p>&nbsp;</p><p>&nbsp;</p><h3 id='spring--事务'><mark><em><span>Spring</span></em></mark><span>  事务</span></h3><h4 id='1-spring--事务管理的方式有几种'><span>1. </span><em><span>Spring</span></em><span>  事务管理的方式有几种？</span></h4><h4 id='2-spring---事务中的隔离级别有哪几种'><span>2. </span><em><span>Spring</span></em><span>   事务中的隔离级别有哪几种？</span></h4><p>&nbsp;</p><h3 id='其他'><span>其他</span></h3><h4 id='1-spring-框架中用到了哪些设计模式'><span>1. </span><em><span>Spring</span></em><span> 框架中用到了哪些设计模式？</span></h4><h4 id='2--component---和-bean-的区别是什么'><span>2.  </span><em><span>@Component</span></em><span>   和 </span><em><span>@Bean</span></em><span> 的区别是什么？</span></h4><h4 id='3-紧耦合和松耦合的区别如何编写松耦合代码'><span>3. 紧耦合和松耦合的区别，如何编写松耦合代码</span></h4><p><span>			</span><span>紧耦合： 类与类之间高度依赖，维护代码动一发则动全身</span></p><p><span>			</span><span>松耦合： 通过</span><mark><span>单一职责</span></mark><span>和</span><mark><span>接口分离原则</span></mark><span>，</span><mark><span>依赖倒置</span></mark><span>的设计原则来实现。</span></p><p><span>				</span><mark><span>接口分离原则</span></mark><span>： 模块之间通过抽象接口分隔开，而不是通过具体的类，强耦合起来  使用抽象接口来连接 </span></p><p><span>				</span><mark><span>依赖倒置原则</span></mark><span>，</span></p><h4 id='4-javaconfig-是如何取代-xml-文件的'><span>4. </span><em><span>javaConfig</span></em><span> 是如何取代 </span><em><span>xml</span></em><span> 文件的</span></h4><p><span>			</span></p><p>&nbsp;</p><p><span>		</span></p><p><span>				</span></p><p><span>		</span></p><h1 id='springmvc'><mark><em><span>SpringMvc</span></em></mark></h1><p>&nbsp;</p><h1 id='mybatis'><mark><em><span>Mybatis</span></em></mark></h1><h4 id='1-mybatis-是什么'><span>1. Mybatis 是什么？</span></h4><p><span>		</span><span>1.一个半orm框架，它封装了jdbc中繁琐的创建连接，处理驱动，创建1statement等过程，让我们可以专心于sql。减少了大量的代码量。</span></p><p><span>		</span><span>2.mybatis可以使用xml 或者注解来配置和映射pojo类的信息，将pojo映射成数据库中的记录，避免</span></p><p><span>了几乎所有的JDBC 代码和手动设置参数以及获取结果集。</span></p><p><span>		</span><span>3.mybatis，可以使用动态sql，通过java对象和statement 中sql的动态参数进行映射生成最终的sql语句。让mybatis的在灵活性上有了很大的提升。</span></p><p>&nbsp;</p><h4 id='2-和--的区别是什么'><span>2..#{} 和 ${} 的区别是什么？</span></h4><p><span>	</span><span>#</span><span>{}是预编译处理，${}是字符串替换。</span></p><p><span>	</span><em><span>Mybatis</span></em><span>在处理#{}时，会将sql中的#{}替换为?号，调用</span><em><span>PreparedStatement</span></em><span>的</span><em><span>set</span></em><span>方法来赋值；</span></p><p><span>	</span><em><span>Mybatis</span></em><span>在处理{}时，就是把时，就是把{}替换成变量的值。</span></p><p><span>	</span><span>使用#{}可以有效的防止SQL注入，提高系统安全性。</span></p><h4 id='3mybatis是如何将-sql-执行结果封装为目标对象并返回的-都有哪些映射形式'><span>3.</span><em><span>Mybatis</span></em><span>是如何将 </span><em><span>sql</span></em><span> 执行结果封装为目标对象并返回的？ 都有哪些映射形式？</span></h4><p><span>		</span><span>根据你传入的类路径，反射创建对象，同时通过反射把映射关系对上的属性赋值，然后返回该对象。</span></p><p><span>		</span><span>自动映射和手动映射，类属性和表字段完全一直就可以使用自动映射，直接在ruseltType中输入类路径。</span></p><p><span>		</span><span>不一致的时候就需要手动映射，使用reuseltMap 让字段名和 类的属性一一对应，即可完成映射。</span></p><h4 id='4-mybatis-中如何获取自增主键值'><span>4. </span><em><span>Mybatis</span></em><span> 中如何获取自增主键值</span></h4><p><span>insert 标签中加 ：</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 12.4px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">usegeneratedkeys=”true”</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 29px;"></div><div class="CodeMirror-gutters" style="display: none; height: 29px;"></div></div></div></pre><p>&nbsp;</p><p>&nbsp;</p><h1 id='springboot'><em><mark><span>SpringBoot</span></mark></em></h1><h4 id='1-spring-boot---有哪些优点'><span>1. </span><em><span>Spring Boot</span></em><span>   有哪些优点？</span></h4><h4 id='2-spring-相较于-springboot-有哪些不同'><span>2. </span><em><span>Spring</span></em><span> 相较于 </span><em><span>SpringBoot</span></em><span> 有哪些不同</span></h4><h4 id='3-spring-boot---中如何解决跨域问题'><span>3. </span><em><span>Spring Boot</span></em><span>   中如何解决跨域问题？</span></h4><h4 id='4--spring-boot--的核心注解是哪些他由哪几个注解组成的'><span>4.  </span><em><span>Spring Boot</span></em><span>  的核心注解是哪些？他由哪几个注解组成的？</span></h4><h4 id='5--启动类注解有哪些'><span>5.  启动类注解有哪些?</span></h4><p><span>		</span><strong><em><span>@ComponentScan</span></em></strong><span>  自动扫描并加载符合条件的的组件或者Bean的定义</span></p><p><span>		</span></p><p>&nbsp;</p><p>&nbsp;</p><h1 id='mysql'><mark><em><span>Mysql</span></em></mark><span> </span></h1><h4 id='1-说一下什么是事务的acid属性吧'><span>1. 说一下什么是事务的ACID属性吧</span></h4><h4 id='2-事务的隔离级别有哪些'><span>2. 事务的隔离级别有哪些？</span></h4><h4 id='3-解释--mysql--外连接内连接与自连接的区别'><span>3. 解释  </span><em><span>MySQL</span></em><span>  外连接、内连接与自连接的区别</span></h4><h4 id='4'><span>4.</span></h4><p>&nbsp;</p><p>&nbsp;</p><h1 id='java-多线程'><em><span>Java</span></em><span> 多线程</span></h1><h4 id='1--java--如何实现的多线程'><span>1.  </span><em><span>java</span></em><span>  如何实现的多线程</span></h4><p><mark><span>在目前的 JDK 版本中，操作系统支持怎样的线程模型，在很大程度上决定了 Java 虚拟机的线程是怎样映射的</span></mark></p><p><span>		</span></p><p><span>		</span><span>例如windows,和linux系统早期还是在用户空间实现多线程</span></p><p><span>		</span><em><span>jdk1.2</span></em><span>  之前  java也是基于用户空间实现的  </span><mark><span>N:1 的多线程模型,</span></mark></p><p>&nbsp;</p><p><span>		</span><span>后来windows和linux都使用 </span><mark><span>1:1 多线程模型</span></mark><span>  都是基于内核空间实现的多线程</span></p><p><span>		</span><span>jdk1.2 之后  JVM实现多线程的模式也改为 </span><mark><span>1:1 多线程模型</span></mark></p><p><span>		</span></p><p><span>		</span><span>区分两种实现模型的优劣  从三个角度出发：</span></p><p><span>			</span><mark><span>调度：</span></mark><span> 用户空间实现多线程  </span><mark><span>内核空间无法感知</span></mark><span>，</span><mark><span>调度只能由开发者来实现</span></mark><span>,而内核空间则完全相反，</span><mark><span>开发者不用考虑调度</span></mark><span>，</span><mark><span>全部交给操作系统的内核来调度</span></mark><span>。</span></p><p><span>			</span><mark><span>开销：</span></mark><span> 用户空间的</span><mark><span>开销相比内核空间的开销要小很多</span></mark><span>。</span></p><p><span>			</span><mark><span>性能：</span></mark><span>用户级线程的切换发生在用户空间，这样的线程切换至少比陷入内核要快一个数量级，不需要陷入内核、不需要上下文切换、不需要对内存高速缓存进行刷新，这就使得线程调度非常快捷。</span></p><p><span>			</span></p><h1 id='设计模式'><span>设计模式</span></h1><h4 id='1单例模式'><span>1.单例模式</span></h4><h4 id='2简单工厂设计模式'><span>2.简单工厂设计模式</span></h4><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+</body>
+</html>
